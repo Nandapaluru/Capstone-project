@@ -1,0 +1,47 @@
+<h2>Update Product</h2>
+<form [formGroup]="updateProductForm" (ngSubmit)="onUpdate()" class="form-container">
+    <div class="form-group">
+        <label>Name:</label>
+        <input type="text" formControlName="name" class="input-field" />
+        <div *ngIf="updateProductForm.get('name')?.invalid && updateProductForm.get('name')?.touched" class="error-message">
+            <small *ngIf="updateProductForm.get('name')?.errors?.['required']">Product name is required.</small>
+            <small *ngIf="updateProductForm.get('name')?.errors?.['minlength']">Name must be at least 3 characters long.</small>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Description:</label>
+        <input type="text" formControlName="description" class="input-field" />
+        <div *ngIf="updateProductForm.get('description')?.invalid && updateProductForm.get('description')?.touched" class="error-message">
+            <small *ngIf="updateProductForm.get('description')?.errors?.['required']">Description is required.</small>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Manufacturer:</label>
+        <input type="text" formControlName="manufacturer" class="input-field" />
+        <div *ngIf="updateProductForm.get('manufacturer')?.invalid && updateProductForm.get('manufacturer')?.touched" class="error-message">
+            <small *ngIf="updateProductForm.get('manufacturer')?.errors?.['required']">Manufacturer is required.</small>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Price:</label>
+        <input type="number" formControlName="price" class="input-field" />
+        <div *ngIf="updateProductForm.get('price')?.invalid && updateProductForm.get('price')?.touched" class="error-message">
+            <small *ngIf="updateProductForm.get('price')?.errors?.['required']">Price is required.</small>
+            <small *ngIf="updateProductForm.get('price')?.errors?.['min']">Price cannot be negative.</small>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Quantity:</label>
+        <input type="number" formControlName="quantity" class="input-field" />
+        <div *ngIf="updateProductForm.get('quantity')?.invalid && updateProductForm.get('quantity')?.touched" class="error-message">
+            <small *ngIf="updateProductForm.get('quantity')?.errors?.['required']">Quantity is required.</small>
+            <small *ngIf="updateProductForm.get('quantity')?.errors?.['min']">Quantity must be at least 1.</small>
+        </div>
+    </div>
+
+    <button type="submit" [disabled]="updateProductForm.invalid" class="submit-button">Update Product</button>
+</form>
