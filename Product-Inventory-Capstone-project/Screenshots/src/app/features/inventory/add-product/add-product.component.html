@@ -1,0 +1,42 @@
+<h2>Add Product</h2>
+<form (ngSubmit)="onAdd(addProductForm)" #addProductForm="ngForm" class="form-container">
+    <div class="form-group">
+        <label>Name:</label>
+        <input type="text" name="name" ngModel required minlength="3" #name="ngModel" class="input-field" />
+        <div *ngIf="name.invalid && name.touched" class="error-message">
+            <small *ngIf="name.errors?.['required']">Product name is required.</small>
+            <small *ngIf="name.errors?.['minlength']">Name must be at least 3 characters long.</small>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Description:</label>
+        <input type="text" name="description" ngModel required #description="ngModel" class="input-field" />
+        <div *ngIf="description.invalid && description.touched" class="error-message">
+            <small *ngIf="description.errors?.['required']">Description is required.</small>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Manufacturer:</label>
+        <input type="text" name="manufacturer" ngModel required #manufacturer="ngModel" class="input-field" />
+        <div *ngIf="manufacturer.invalid && manufacturer.touched" class="error-message">
+            <small *ngIf="manufacturer.errors?.['required']">Manufacturer is required.</small>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Price:</label>
+        <input type="number" name="price" ngModel required min="0" #price="ngModel" class="input-field" />
+        <div *ngIf="price.invalid && price.touched" class="error-message">
+            <small *ngIf="price.errors?.['required']">Price is required.</small>
+            <small *ngIf="price.errors?.['min']">Price cannot be negative.</small>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Quantity:</label>
+        <input type="number" name="quantity" ngModel required min="1" #quantity="ngModel" class="input-field" />
+        <div *ngIf="quantity.invalid && quantity.touched" class="error-message">
+            <small *ngIf="quantity.errors?.['required']">Quantity is required.</small>
+            <small *ngIf="quantity.errors?.['min']">Quantity must be at least 1.</small>
+        </div>
+    </div>
+    <button type="submit" [disabled]="addProductForm.invalid" class="submit-button">Add Product</button>
+</form>

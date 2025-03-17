@@ -1,0 +1,58 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "john.doe@example.com",
+      "password": "password123",
+      "firstName": "John",
+      "lastName": "Doe",
+      "location": "New York",
+      "mobileNumber": "1234567890"
+    },
+    {
+      "id": 2,
+      "email": "jane.smith@example.com",
+      "password": "password456",
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "location": "Los Angeles",
+      "mobileNumber": "0987654321"
+    },
+    {
+      "email": "damon@salvatore.com",
+      "password": "Damon@123",
+      "firstName": "Damon",
+      "lastName": "Salvatore",
+      "location": "Mystic Falls",
+      "mobileNumber": "7852698523",
+      "id": 3
+    },
+    {
+      "email": "damon@salvatore.com",
+      "password": "Damon@123",
+      "firstName": "Damon",
+      "lastName": "Salvatore",
+      "location": "Mystic Falls",
+      "mobileNumber": "7852698523",
+      "id": 4
+    }
+  ],
+  "products": [
+    {
+      "id": 101,
+      "name": "Laptop",
+      "description": "A powerful gaming laptop",
+      "manufacturer": "Lenovo",
+      "price": 50000,
+      "quantity": 10
+    },
+    {
+      "id": 102,
+      "name": "Smartphone",
+      "description": "Latest smartphone with 5G",
+      "manufacturer": "Mobile Inc",
+      "price": 15000,
+      "quantity": 25
+    }
+  ]
+}
